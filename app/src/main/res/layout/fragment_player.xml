@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.player.PlayerFragment">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            app:resize_mode="fit"
+            app:hide_on_touch="true"
+            android:background="@color/black"
+            app:surface_type="texture_view"
+            app:use_controller="true"
+            app:player_layout_id="@layout/exo_styled_player_view"
+            app:controller_layout_id="@layout/layout_custom_control"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+</layout>

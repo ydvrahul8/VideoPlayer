@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="videoFileModel"
+            type="com.example.videoplayertest.model.VideoFileModel" />
+
+        <variable
+            name="listener"
+            type="com.example.videoplayertest.base.OnClickHandler" />
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_level1"
+        android:onClick="@{(view)->listener.onLocationClick(view,position)}"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_level1">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:imageResource="@{videoFileModel.filePath}" />
+
+            <TextView
+                android:id="@+id/videotitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{videoFileModel.fileName}" />
+
+            <TextView
+                android:id="@+id/createdDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{videoFileModel.createdDate}" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
